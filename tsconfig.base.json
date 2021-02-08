@@ -17,7 +17,8 @@
     "paths": {
       "@zoos/mammals": ["libs/mammals/src/index.ts"],
       "@zoos/birds": ["libs/birds/src/index.ts"],
-      "@zoos/fish": ["libs/fish/src/index.ts"]
+      "@zoos/fish": ["libs/fish/src/index.ts"],
+      "@zoos/menu": ["libs/menu/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

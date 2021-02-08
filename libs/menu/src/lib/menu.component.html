@@ -1,0 +1,11 @@
+<strong>menu component</strong>
+<ul>
+  <li *ngFor="let section of sections">
+    {{ section.name }}
+    <ul>
+      <li *ngFor="let item of section.items">
+        {{ item }}
+      </li>
+    </ul>
+  </li>
+</ul>

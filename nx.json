@@ -22,6 +22,7 @@
     "birds": { "tags": [] },
     "fish": { "tags": [] },
     "opava": { "tags": [] },
-    "opava-e2e": { "tags": [], "implicitDependencies": ["opava"] }
+    "opava-e2e": { "tags": [], "implicitDependencies": ["opava"] },
+    "menu": { "tags": [] }
   }
 }

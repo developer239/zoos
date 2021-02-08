@@ -328,6 +328,31 @@
           }
         }
       }
+    },
+    "menu": {
+      "projectType": "library",
+      "root": "libs/menu",
+      "sourceRoot": "libs/menu/src",
+      "prefix": "zoos",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/menu/src/**/*.ts",
+              "libs/menu/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/menu"],
+          "options": {
+            "jestConfig": "libs/menu/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
     }
   }
 }

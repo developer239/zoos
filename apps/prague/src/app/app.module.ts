@@ -2,13 +2,13 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { MenuComponent } from 'apps/prague/src/app/components/menu/menu.component';
-import { BirdsModule } from '@zoos/birds';
+import { MenuModule } from '@zoos/menu';
 import { FishModule } from '@zoos/fish';
+import { BirdsModule } from '@zoos/birds';
 
 @NgModule({
-  declarations: [AppComponent, MenuComponent],
-  imports: [BrowserModule, BirdsModule, FishModule],
+  declarations: [AppComponent],
+  imports: [BrowserModule, MenuModule, FishModule, BirdsModule],
   providers: [],
   bootstrap: [AppComponent],
 })

@@ -5,5 +5,6 @@ module.exports = {
     '<rootDir>/libs/birds',
     '<rootDir>/libs/fish',
     '<rootDir>/apps/opava',
+    '<rootDir>/libs/menu',
   ],
 };
