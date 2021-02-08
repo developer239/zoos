@@ -142,6 +142,192 @@
           }
         }
       }
+    },
+    "mammals": {
+      "projectType": "library",
+      "root": "libs/mammals",
+      "sourceRoot": "libs/mammals/src",
+      "prefix": "zoos",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/mammals/src/**/*.ts",
+              "libs/mammals/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/mammals"],
+          "options": {
+            "jestConfig": "libs/mammals/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "birds": {
+      "projectType": "library",
+      "root": "libs/birds",
+      "sourceRoot": "libs/birds/src",
+      "prefix": "zoos",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/birds/src/**/*.ts",
+              "libs/birds/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/birds"],
+          "options": {
+            "jestConfig": "libs/birds/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "fish": {
+      "projectType": "library",
+      "root": "libs/fish",
+      "sourceRoot": "libs/fish/src",
+      "prefix": "zoos",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/fish/src/**/*.ts",
+              "libs/fish/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/fish"],
+          "options": {
+            "jestConfig": "libs/fish/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "opava": {
+      "projectType": "application",
+      "root": "apps/opava",
+      "sourceRoot": "apps/opava/src",
+      "prefix": "zoos",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/apps/opava",
+            "index": "apps/opava/src/index.html",
+            "main": "apps/opava/src/main.ts",
+            "polyfills": "apps/opava/src/polyfills.ts",
+            "tsConfig": "apps/opava/tsconfig.app.json",
+            "aot": true,
+            "assets": ["apps/opava/src/favicon.ico", "apps/opava/src/assets"],
+            "styles": ["apps/opava/src/styles.scss"],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/opava/src/environments/environment.ts",
+                  "with": "apps/opava/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "opava:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "opava:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "opava:build"
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "apps/opava/src/**/*.ts",
+              "apps/opava/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/apps/opava"],
+          "options": {
+            "jestConfig": "apps/opava/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "opava-e2e": {
+      "root": "apps/opava-e2e",
+      "sourceRoot": "apps/opava-e2e/src",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/opava-e2e/cypress.json",
+            "tsConfig": "apps/opava-e2e/tsconfig.e2e.json",
+            "devServerTarget": "opava:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "opava:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["apps/opava-e2e/**/*.{js,ts}"]
+          }
+        }
+      }
     }
   }
 }

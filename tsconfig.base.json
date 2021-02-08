@@ -14,7 +14,11 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@zoos/mammals": ["libs/mammals/src/index.ts"],
+      "@zoos/birds": ["libs/birds/src/index.ts"],
+      "@zoos/fish": ["libs/fish/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }
